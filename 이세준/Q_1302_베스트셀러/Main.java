@@ -22,11 +22,7 @@ public class Main {
 			}
 		}
 		
-//		for(String s : map.keySet()) {
-//			System.out.println(s + " : " + map.get(s));
-//		}
-		
-		//System.out.println(map.size());
+
 		
 		int max = 0;
 		String max_name = "";
@@ -37,7 +33,7 @@ public class Main {
 			}
 		}
 		
-		//System.out.println(max);
+	
 		System.out.println(max_name);
 	}
 }
