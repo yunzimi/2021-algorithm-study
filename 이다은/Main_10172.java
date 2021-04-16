@@ -1,4 +1,4 @@
-package github;
+
 
 public class Main_10172 {
 
