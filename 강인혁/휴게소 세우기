@@ -1,0 +1,61 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <cstring>
+#include <queue>
+#include <stack>
+#include <cmath>
+#include <map>
+
+typedef long long ll;
+
+using namespace std;
+
+const int INF = 987654321;
+
+int N, M , L;
+vector<int> dist;
+
+
+// 주어진 조각들을 length 길이 이상의 M조각으로 쪼갤 수 있는가 
+bool decision(int length){
+	int ans = 0;
+	for(int i=0; i< dist.size(); i++){
+		if(dist[i] < length) continue;
+		ans += (dist[i] / length) -1;
+		if(dist[i] % length) ans++;
+	}
+	
+	return ans <= M;
+}
+
+int main(int argc, char** argv) {
+	
+	cin >> N >> M >> L;
+	
+	vector<int> rest(N+2);
+	
+	rest[0] = 0;
+	for(int i=1; i<=N; i++){
+		cin >> rest[i];
+	}
+	rest[N+1] = L;
+	sort(rest.begin(), rest.end());
+	
+	dist = vector<int>(N+1);
+	for(int i=0; i<= N; i++){
+		dist[i] = rest[i + 1] - rest[i];
+	}
+	
+	int lo =1, hi = L;
+	// !decision(lo) && decision(hi) 
+	while(lo + 1 < hi){
+		int mid = (lo + hi) / 2;
+		if(decision(mid)) hi = mid;
+		else lo = mid;
+	}
+	
+	cout << hi << endl;
+
+	return 0;
+}
