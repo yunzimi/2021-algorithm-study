@@ -9,7 +9,7 @@
 				"-g",
 				"${file}",
 				"-o",
-				"${fileDirname}\\${fileBasenameNoExtension}.exe"
+				"${fileDirname}\\builds\\${fileBasenameNoExtension}.exe"
 			],
 			"problemMatcher": [
 				"$gcc"
@@ -22,7 +22,7 @@
         {
             "type": "shell",
             "label": "Run",
-            "command": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+            "command": "${fileDirname}\\builds\\${fileBasenameNoExtension}.exe",
             "problemMatcher": [
                 "$gcc"
             ],
