@@ -1,5 +1,3 @@
-package github;
-
 public class Main_4673 {
 
 	static int a = 10000;
