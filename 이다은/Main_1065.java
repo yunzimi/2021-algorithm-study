@@ -1,5 +1,3 @@
-package github;
-
 import java.util.Scanner;
 
 public class Main_1065 {
