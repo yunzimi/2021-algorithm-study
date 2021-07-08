@@ -1,5 +1,3 @@
-package github;
-
 import java.util.*;
 
 public class Main_3009 {
